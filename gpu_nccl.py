@@ -15,7 +15,7 @@ import socket
 
 os.environ['MASTER_ADDR'] = socket.gethostbyname('node-0')
 os.environ['MASTER_PORT'] = "12345"
-os.environ['PAI_TASK_INDEX'] = int(socket.gethostname().split('-')[-1])
+os.environ['PAI_TASK_INDEX'] = socket.gethostname().split('-')[-1]
 
 def main():
     print('run main')
