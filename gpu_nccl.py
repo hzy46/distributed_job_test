@@ -11,9 +11,11 @@ import torch.nn.functional as F
 import torch.distributed as dist
 from apex.parallel import DistributedDataParallel as DDP
 from apex import amp
+import socket
 
-os.environ['MASTER_ADDR'] = "10.6.34.254"
+os.environ['MASTER_ADDR'] = socket.gethostbyname('node-0')
 os.environ['MASTER_PORT'] = "12345"
+os.environ['PAI_TASK_INDEX'] = int(socket.gethostname().split('-')[-1])
 
 def main():
     print('run main')
