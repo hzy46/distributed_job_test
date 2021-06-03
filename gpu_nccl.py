@@ -9,8 +9,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.distributed as dist
-from apex.parallel import DistributedDataParallel as DDP
-from apex import amp
 import socket
 
 os.environ['MASTER_ADDR'] = socket.gethostbyname('node-0')
